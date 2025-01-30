@@ -59,7 +59,7 @@ const UpdateGame = () => {
         const updatedGame = { poster, title, genres, duration, year, rating: gameRating, summary };
         // console.log(updatedMovie);
         setLoading(true);
-        fetch(`http://localhost:5000/updategames/${_id}`, {
+        fetch(`https://asst-server.vercel.app/updategames/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

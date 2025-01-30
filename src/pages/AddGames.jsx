@@ -56,7 +56,7 @@ const AddGames = () => {
         const game = { poster, title, genres, duration, year, rating, summary };
         try {
             setLoading(true);
-            fetch("http://localhost:5000/user/addgames", {
+            fetch("https://asst-server.vercel.app/user/addgames", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

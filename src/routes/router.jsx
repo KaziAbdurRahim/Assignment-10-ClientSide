@@ -22,12 +22,12 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: () => fetch('http://localhost:5000/getfeaturegames'),
+                loader: () => fetch('https://asst-server.vercel.app/getfeaturegames'),
             },
             {
                 path: '/allgames',
                 element: <AllGames />,
-                loader: () => fetch('http://localhost:5000/allgames'),
+                loader: () => fetch('https://asst-server.vercel.app/allgames'),
             },
             {
                 path: '/faq',
@@ -46,12 +46,12 @@ const router = createBrowserRouter([
             {
                 path: '/games/:id',
                 element: <DetailsGame />,
-                loader: ({ params }) => fetch(`http://localhost:5000/games/${params.id}`),
+                loader: ({ params }) => fetch(`https://asst-server.vercel.app/games/${params.id}`),
             },
             {
                 path: '/games/update/:id',
                 element: <UpdateGame />,
-                loader: ({ params }) => fetch(`http://localhost:5000/games/${params.id}`),
+                loader: ({ params }) => fetch(`https://asst-server.vercel.app/games/${params.id}`),
             },
         ],
     },
@@ -72,7 +72,7 @@ const router = createBrowserRouter([
         ),
         children: [
             { path: "/user/addgames", element: <AddGames /> },
-            { path: "/user/favgames/:id", element: <FavGames />, loader: ({ params }) => fetch(`http://localhost:5000/getfavorite/${params.id}`) },
+            { path: "/user/favgames/:id", element: <FavGames />, loader: ({ params }) => fetch(`https://asst-server.vercel.app/getfavorite/${params.id}`) },
         ],
     },
     {

@@ -15,7 +15,7 @@ const AllGames = () => {
         setIsLoading(true);
         setError('');
         try {
-            const response = await fetch(`http://localhost:5000/searchgames/${searchQuery}`);
+            const response = await fetch(`https://asst-server.vercel.app/searchgames/${searchQuery}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch search results');
             }

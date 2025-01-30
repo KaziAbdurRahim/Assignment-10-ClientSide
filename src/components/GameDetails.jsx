@@ -26,7 +26,7 @@ const GameDetails = ({ poster, title, genres, duration, year, rating, summary, _
           if (result.isConfirmed) {
               setIsLoading(true);
               try {
-                const response = await fetch(`http://localhost:5000/games/${_id}`, {
+                const response = await fetch(`https://asst-server.vercel.app/games/${_id}`, {
                     method: 'DELETE',
                   });
                   
@@ -57,7 +57,7 @@ const GameDetails = ({ poster, title, genres, duration, year, rating, summary, _
   const handleFavorite = async () => {
       setIsLoading(true);
       try {
-          const response = await fetch(`http://localhost:5000/addtofavorite`, {
+          const response = await fetch(`https://asst-server.vercel.app/addtofavorite`, {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',
