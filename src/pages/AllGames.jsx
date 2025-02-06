@@ -4,9 +4,9 @@ import GameCard from '../components/GameCard';
 import Loading from '../components/Loading';
 
 const AllGames = () => {
-    const games = useLoaderData(); // All movies initially loaded
+    const games = useLoaderData(); // All games initially loaded
     const [searchQuery, setSearchQuery] = useState(''); // User's search input
-    const [searchedGames, setSearchedGames] = useState([]); // Movies from search
+    const [searchedGames, setSearchedGames] = useState([]); // games from search
     const [isLoading, setIsLoading] = useState(false); // Loading state
     const [error, setError] = useState(''); // Error state
 
@@ -15,7 +15,7 @@ const AllGames = () => {
         setIsLoading(true);
         setError('');
         try {
-            const response = await fetch(`http://localhost:5000/searchgames/${searchQuery}`);
+            const response = await fetch(`https://asst-server.vercel.app/searchgames/${searchQuery}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch search results');
             }
@@ -45,18 +45,16 @@ const AllGames = () => {
     return (
         <div>
         <div className='mb-20 mt-5'>
-            <h2 className="text-center text-3xl pt-10 pb-10 font-bold">All Games</h2>
-
             {/* Search Section */}
             <div className='mx-10'>
-                <h3 className='mb-2'>Search </h3>
-                <div className="input input-bordered flex items-center gap-2">
+               
+                <div className="flex ">
                     <input
                         type="text"
                         value={searchQuery}
                         onChange={handleInputChange}
                         onKeyDown={handleKeyDown}
-                        className="grow input"
+                        className="grow input "
                         placeholder="Search by title"
                     />
                     <button
@@ -70,7 +68,7 @@ const AllGames = () => {
                 {error && <p className="text-red-500 mt-2">{error}</p>}
             </div>
 
-            {/* Searched Movies */}
+            {/* Searched games */}
             {searchedGames.length > 0 && (
                 <div className='mt-10'>
                     <h3 className="text-xl font-semibold mb-4 text-center py-10">Searched Games</h3>
@@ -89,7 +87,7 @@ const AllGames = () => {
                     {games.map(game => (
                         <GameCard key={game._id} {...game} />
                     ))}
-                    console.log(games);
+                  
                 </div>
             </div>
 

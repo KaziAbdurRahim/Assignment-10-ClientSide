@@ -67,10 +67,10 @@ const Home = () => {
             </div>
         </div>
 
-        {/* Feature Movie */}
+        {/* Feature game */}
         <div className=''>
             <h2 className="text-center text-3xl pt-10 pb-10  font-bold">Highest rated games</h2>
-            {/* mapping the movies */}
+            {/* mapping the game */}
             <div className='grid lg:grid-cols-2 2xl:grid-cols-3 grid-cols-1 gap-4 lg:mx-20 md:mx-20 sm-mx-10 ' >
                 {
                     games.map(game => {

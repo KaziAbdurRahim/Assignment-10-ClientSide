@@ -37,7 +37,7 @@ If you'd like to set up this project locally, follow these steps:
 5. Run the application locally:
    `npm start`
 
-The app will be available at `http://localhost:5000`.
+The app will be available at `https://asst-server.vercel.app`.
 
 ## Features Overview
 

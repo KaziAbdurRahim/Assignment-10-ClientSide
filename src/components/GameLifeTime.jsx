@@ -4,9 +4,9 @@ import CountUp from 'react-countup';
 const GameLifeTime = () => {
     return (
         <div className="card lg:card-side bg-base-100 shadow-xl pb-4 ">
-            <figure className='w-[400px] h-full object-cover mx-auto'>
-                <img
-                    src={'https://images.unsplash.com/photo-1691480213129-106b2c7d1ee8?q=80&w=1180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}
+            <figure className='w-[400px] h-full  object-cover mx-auto'>
+                <img className='rounded-lg'
+                    src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMASk2fmHSGTOsquVmWKSSKHLWo9xSyWfTYA&s'}
                     alt="Album" />
             </figure>
             <div className="card-body">

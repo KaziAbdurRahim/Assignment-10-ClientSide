@@ -2,10 +2,10 @@ import React from 'react';
 
 const Faq = () => {
     return (
-        <section className="py-10 bg-gray-900 text-white">
+        <section className="py-10 bg-base-100 ">
             <div className="max-w-4xl mx-auto px-4">
                 {/* Section Header */}
-                <h2 className="text-4xl font-bold text-center text-green-500 mb-8">
+                <h2 className="text-4xl font-bold text-center  mb-8">
                     Gamer's FAQ
                 </h2>
                 <p className="text-center text-lg text-gray-400 mb-10">
@@ -15,7 +15,7 @@ const Faq = () => {
                 {/* FAQ Accordion */}
                 <div className="space-y-4">
                     {/* Question 1 */}
-                    <div className="collapse collapse-arrow bg-gray-800">
+                    <div className="collapse collapse-arrow bg-base-100">
                         <input type="radio" name="faq-accordion" defaultChecked />
                         <div className="collapse-title text-lg font-medium">
                             What is the subscription cost?
@@ -28,7 +28,7 @@ const Faq = () => {
                     </div>
 
                     {/* Question 2 */}
-                    <div className="collapse collapse-arrow bg-gray-800">
+                    <div className="collapse collapse-arrow bg-base-100">
                         <input type="radio" name="faq-accordion" />
                         <div className="collapse-title text-lg font-medium">
                             Can I play games offline?
@@ -41,7 +41,7 @@ const Faq = () => {
                     </div>
 
                     {/* Question 3 */}
-                    <div className="collapse collapse-arrow bg-gray-800">
+                    <div className="collapse collapse-arrow bg-base-100">
                         <input type="radio" name="faq-accordion" />
                         <div className="collapse-title text-lg font-medium">
                             Are there any ads?
@@ -54,7 +54,7 @@ const Faq = () => {
                     </div>
 
                     {/* Question 4 */}
-                    <div className="collapse collapse-arrow bg-gray-800">
+                    <div className="collapse collapse-arrow bg-base-100">
                         <input type="radio" name="faq-accordion" />
                         <div className="collapse-title text-lg font-medium">
                             How many devices can I play on simultaneously?
@@ -67,7 +67,7 @@ const Faq = () => {
                     </div>
 
                     {/* Question 5 */}
-                    <div className="collapse collapse-arrow bg-gray-800">
+                    <div className="collapse collapse-arrow bg-base-100">
                         <input type="radio" name="faq-accordion" />
                         <div className="collapse-title text-lg font-medium">
                             Do you have a free trial?

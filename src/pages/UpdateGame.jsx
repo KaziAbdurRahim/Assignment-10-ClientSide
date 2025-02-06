@@ -26,11 +26,11 @@ const UpdateGame = () => {
 
         // Validation
         if (!poster.startsWith("http://") && !poster.startsWith("https://")) {
-            setFormError("The Movie Poster must be a valid link.");
+            setFormError("The games Poster must be a valid link.");
             return;
         }
         if (!title || title.length < 2) {
-            setFormError("The Movie Title must have at least 2 characters.");
+            setFormError("The games Title must have at least 2 characters.");
             return;
         }
         if (genres.length === 0) {
@@ -59,7 +59,7 @@ const UpdateGame = () => {
         const updatedGame = { poster, title, genres, duration, year, rating: gameRating, summary };
         // console.log(updatedMovie);
         setLoading(true);
-        fetch(`http://localhost:5000/updategames/${_id}`, {
+        fetch(`https://asst-server.vercel.app/updategames/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -104,10 +104,10 @@ const UpdateGame = () => {
         <div className="min-h-[calc(100vh-264px)] mt-5">
             <div className="card bg-base-100 w-full max-w-4xl mx-auto shrink-0 shadow-2xl">
                 <div>
-                    <h2 className="text-center text-3xl pt-4">Update Game</h2>
+                    <h2 className="text-center text-3xl pt-4 font-bold">Update Game</h2>
                 </div>
                 <form className="card-body" onSubmit={handleSubmit}>
-                    <div className="form-control">
+                    <div className="form-control flex justify-between">
                         <label className="label">
                             <span className="label-text">Game Poster</span>
                         </label>
@@ -120,7 +120,7 @@ const UpdateGame = () => {
                             required
                         />
                     </div>
-                    <div className="form-control">
+                    <div className="form-control flex justify-between">
                         <label className="label">
                             <span className="label-text">Game Title</span>
                         </label>
@@ -133,7 +133,7 @@ const UpdateGame = () => {
                             required
                         />
                     </div>
-                    <div className="form-control">
+                    <div className="form-control flex justify-between">
                         <label className="label">
                             <span className="label-text">Genre (multiple selection)</span>
                         </label>
@@ -155,7 +155,7 @@ const UpdateGame = () => {
                             <option value="animation">Animation</option>
                         </select>
                     </div>
-                    <div className="form-control">
+                    <div className="form-control flex justify-between">
                         <label className="label">
                             <span className="label-text">Least Clear Duration (in minutes)</span>
                         </label>
@@ -168,7 +168,7 @@ const UpdateGame = () => {
                             required
                         />
                     </div>
-                    <div className="form-control">
+                    <div className="form-control flex justify-between">
                         <label className="label">
                             <span className="label-text">Release Year</span>
                         </label>
@@ -181,7 +181,7 @@ const UpdateGame = () => {
                             required
                         />
                     </div>
-                    <div className="form-control flex">
+                    <div className="form-control flex justify-between">
                         <label className="label">
                             <span className="label-text">Rating</span>
                         </label>
@@ -209,7 +209,7 @@ const UpdateGame = () => {
                             />
                         </div>
                     </div>
-                    <div className="form-control">
+                    <div className="form-control flex justify-between">
                         <label className="label">
                             <span className="label-text">Summary</span>
                         </label>

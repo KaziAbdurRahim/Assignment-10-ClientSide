@@ -5,12 +5,12 @@ import { Rating } from 'react-simple-star-rating';
 
 const GameCard = ({ poster, title, genres, duration, year, rating, summary, _id }) => {
     return (
-        <div className="card card-side bg-base-100 shadow-xl max-w-2xl ">
-            <figure>
+        <div className="card card-side  shadow-xl max-w-2xl ">
+            <figure className="w-[250px] h-[380px] flex-shrink-0 p-2">
                 <img
                     src={poster}
                     alt={title}
-                    className="object-cover w-48 h-[380px] rounded-lg"
+                    className="w-full h-full object-cover rounded-lg"
                 />
             </figure>
             <div className="card-body">

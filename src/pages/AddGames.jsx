@@ -56,7 +56,7 @@ const AddGames = () => {
         const game = { poster, title, genres, duration, year, rating, summary };
         try {
             setLoading(true);
-            fetch("http://localhost:5000/user/addgames", {
+            fetch("https://asst-server.vercel.app/user/addgames", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -84,25 +84,25 @@ const AddGames = () => {
     }
     
     return (
-        <div className="min-h-[calc(100vh-264px)] mt-5">
+        <div className="min-h-[calc(100vh-264px)] mt-5  align-middle object-center ">
         <div className="card bg-base-100 w-full max-w-4xl mx-auto shrink-0 shadow-2xl">
             <div>
-                <h2 className="text-center text-3xl pt-4">Add a Game</h2>
+                <h2 className="text-center text-3xl pt-4 font-bold">Add a Game</h2>
             </div>
-            <form className="card-body" onSubmit={handleSubmit}>
-                <div className="form-control">
-                    <label className="label">
+            <form className="card-body " onSubmit={handleSubmit}>
+                <div className="form-control flex justify-between ">
+                    <label className="label ">
                         <span className="label-text">Game Poster</span>
                     </label>
-                    <input type="text" name="poster" placeholder="Image URL" className="input input-bordered" required />
+                    <input type="text" name="poster" placeholder="Image URL" className="input input-bordered " required />
                 </div>
-                <div className="form-control">
+                <div className="form-control flex justify-between">
                     <label className="label">
                         <span className="label-text">Game Title</span>
                     </label>
                     <input type="text" name="title" placeholder="Title" className="input input-bordered" required />
                 </div>
-                <div className="form-control">
+                <div className="form-control flex justify-between">
                     <label className="label">
                         <span className="label-text">Genre (multiple selection)</span>
                     </label>
@@ -118,19 +118,19 @@ const AddGames = () => {
                         <option value="animation">Animation</option>
                     </select>
                 </div>
-                <div className="form-control">
+                <div className="form-control flex justify-between">
                     <label className="label">
                         <span className="label-text">Least clear Duration (in minutes)</span>
                     </label>
                     <input type="number" name="duration" placeholder="Duration" className="input input-bordered" required />
                 </div>
-                <div className="form-control">
+                <div className="form-control flex justify-between">
                     <label className="label">
                         <span className="label-text">Release Year</span>
                     </label>
                     <input type="number" name="year" placeholder="Release Year" className="input input-bordered" required />
                 </div>
-                <div className="form-control flex ">
+                <div className="form-control flex justify-between ">
                     <label className="label">
                         <span className="label-text">Rating</span>
                     </label>
@@ -157,7 +157,7 @@ const AddGames = () => {
                         />
                     </div>
                 </div>
-                <div className="form-control">
+                <div className="form-control flex justify-between">
                     <label className="label">
                         <span className="label-text">Summary</span>
                     </label>

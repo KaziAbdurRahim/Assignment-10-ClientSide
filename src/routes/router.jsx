@@ -23,7 +23,7 @@ const router = createBrowserRouter([
                 path: '',
                 element: <Home />,
                 loader: async () => {
-                    const res = await fetch('http://localhost:5000/getfeaturegames');
+                    const res = await fetch('https://asst-server.vercel.app/getfeaturegames');
                     const data = await res.json();
                     return Array.isArray(data) ? data : [];
                 },
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
                 path: 'allgames',
                 element: <AllGames />,
                 loader: async () => {
-                    const res = await fetch('http://localhost:5000/allgames');
+                    const res = await fetch('https://asst-server.vercel.app/allgames');
                     const data = await res.json();
                     return Array.isArray(data) ? data : [];
                 },
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
                 path: ':id',
                 element: <DetailsGame />,
                 loader: async ({ params }) => {
-                    const res = await fetch(`http://localhost:5000/games/${params.id}`);
+                    const res = await fetch(`https://asst-server.vercel.app/games/${params.id}`);
                     return res.json();
                 },
             },
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
                 path: 'update/:id',
                 element: <UpdateGame />,
                 loader: async ({ params }) => {
-                    const res = await fetch(`http://localhost:5000/games/${params.id}`);
+                    const res = await fetch(`https://asst-server.vercel.app/games/${params.id}`);
                     return res.json();
                 },
             },
@@ -90,7 +90,7 @@ const router = createBrowserRouter([
                 path: "favgames/:id",
                 element: <FavGames />,
                 loader: async ({ params }) => {
-                    const res = await fetch(`http://localhost:5000/getfavorite/${params.id}`);
+                    const res = await fetch(`https://asst-server.vercel.app/getfavorite/${params.id}`);
                     return res.json();
                 },
             },
