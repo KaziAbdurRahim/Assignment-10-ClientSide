@@ -20,23 +20,31 @@ const router = createBrowserRouter([
         element: <HomeLayout />,
         children: [
             {
-                path: '/',
+                path: '',
                 element: <Home />,
-                loader: () => fetch('https://asst-server.vercel.app/getfeaturegames'),
+                loader: async () => {
+                    const res = await fetch('http://localhost:5000/getfeaturegames');
+                    const data = await res.json();
+                    return Array.isArray(data) ? data : [];
+                },
             },
             {
-                path: '/allgames',
+                path: 'allgames',
                 element: <AllGames />,
-                loader: () => fetch('https://asst-server.vercel.app/allgames'),
+                loader: async () => {
+                    const res = await fetch('http://localhost:5000/allgames');
+                    const data = await res.json();
+                    return Array.isArray(data) ? data : [];
+                },
             },
             {
-                path: '/faq',
+                path: 'faq',
                 element: <Faq />,
             },
         ],
     },
     {
-        path: '/games',
+        path: 'games',
         element: (
             <PrivateRoute>
                 <HomeLayout />
@@ -44,35 +52,48 @@ const router = createBrowserRouter([
         ),
         children: [
             {
-                path: '/games/:id',
+                path: ':id',
                 element: <DetailsGame />,
-                loader: ({ params }) => fetch(`https://asst-server.vercel.app/games/${params.id}`),
+                loader: async ({ params }) => {
+                    const res = await fetch(`http://localhost:5000/games/${params.id}`);
+                    return res.json();
+                },
             },
             {
-                path: '/games/update/:id',
+                path: 'update/:id',
                 element: <UpdateGame />,
-                loader: ({ params }) => fetch(`https://asst-server.vercel.app/games/${params.id}`),
+                loader: async ({ params }) => {
+                    const res = await fetch(`http://localhost:5000/games/${params.id}`);
+                    return res.json();
+                },
             },
         ],
     },
     {
-        path: "/auth",
+        path: "auth",
         element: <AuthLayout />,
         children: [
-            { path: "/auth/login", element: <Login /> },
-            { path: "/auth/register", element: <Register /> },
+            { path: "login", element: <Login /> },
+            { path: "register", element: <Register /> },
         ],
     },
     {
-        path: "/user",
+        path: "user",
         element: (
             <PrivateRoute>
                 <HomeLayout />
             </PrivateRoute>
         ),
         children: [
-            { path: "/user/addgames", element: <AddGames /> },
-            { path: "/user/favgames/:id", element: <FavGames />, loader: ({ params }) => fetch(`https://asst-server.vercel.app/getfavorite/${params.id}`) },
+            { path: "addgames", element: <AddGames /> },
+            {
+                path: "favgames/:id",
+                element: <FavGames />,
+                loader: async ({ params }) => {
+                    const res = await fetch(`http://localhost:5000/getfavorite/${params.id}`);
+                    return res.json();
+                },
+            },
         ],
     },
     {

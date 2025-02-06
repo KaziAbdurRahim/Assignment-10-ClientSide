@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "chill-gamer-2fc8d"
-  }
+    "default": "chillg-5efd9",
+    "chillg": "chillg-5efd9"
+  },
+  "targets": {},
+  "etags": {}
 }

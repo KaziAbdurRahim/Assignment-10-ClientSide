@@ -11,7 +11,7 @@ const Home = () => {
         <div className="carousel w-full max-h-[900px] my-5 relative">
             <div id="slide1" className="carousel-item relative w-full">
                 <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeJrGkQMvOdqe69PfgiTFgVQBkQSPsWkKjEQ&s"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ_snu4lT24cZsrD_IJ3B9eb4CWHMpYDppZg&s"
                     className="w-full object-cover" />
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                     <h2 className="text-white text-4xl md:text-6xl font-bold font-['Limelight'] tracking-wider drop-shadow-[2px_2px_8px_rgba(0,0,0,0.75)] border-4 border-white p-4">

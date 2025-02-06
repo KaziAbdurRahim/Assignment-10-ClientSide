@@ -26,7 +26,7 @@ const FavCard = ({ poster, title, genres, duration, year, rating, summary, _id ,
                 try {
                     setLoading(true);
                     // Call API to delete the movie
-                    const response = await fetch(`http://localhost:5000/deletefavorite/${user.email}/${_id}`, {
+                    const response = await fetch(`https://asst-server.vercel.app/deletefavorite/${user.email}/${_id}`, {
                         method: 'DELETE',
                       });
                       

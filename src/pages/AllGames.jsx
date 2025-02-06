@@ -15,7 +15,7 @@ const AllGames = () => {
         setIsLoading(true);
         setError('');
         try {
-            const response = await fetch(`https://asst-server.vercel.app/searchgames/${searchQuery}`);
+            const response = await fetch(`http://localhost:5000/searchgames/${searchQuery}`);
             if (!response.ok) {
                 throw new Error('Failed to fetch search results');
             }
@@ -82,13 +82,14 @@ const AllGames = () => {
                 </div>
             )}
 
-            {/* All Movies */}
+            {/* All GAmes */}
             <div className='mt-10'>
                 <h3 className="text-xl font-semibold mb-4 text-center py-10">All Games</h3>
                 <div className='grid lg:grid-cols-2 2xl:grid-cols-3 grid-cols-1 gap-4 lg:mx-20 md:mx-20 sm:mx-10'>
                     {games.map(game => (
                         <GameCard key={game._id} {...game} />
                     ))}
+                    console.log(games);
                 </div>
             </div>
 

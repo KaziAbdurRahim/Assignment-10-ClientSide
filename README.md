@@ -3,10 +3,6 @@
 
 Welcome to **Chill Gamer**, an engaging gaming portal where users can explore games, add new ones, and manage their favorites in a user-friendly, responsive interface. With features like game details, search functionality, and private user routes, this project aims to provide a seamless experience for gaming enthusiasts.
 
-## Live Site
-
-You can access the live site here: [Chill Gamer](https://chill-gamer-2fc8d.web.app)
-
 ## Features
 
 - **Dynamic Game Database**: Explore a wide variety of games with detailed information including genre, rating, and release year.
@@ -41,7 +37,7 @@ If you'd like to set up this project locally, follow these steps:
 5. Run the application locally:
    `npm start`
 
-The app will be available at `https://asst-server.vercel.app`.
+The app will be available at `http://localhost:5000`.
 
 ## Features Overview
 
